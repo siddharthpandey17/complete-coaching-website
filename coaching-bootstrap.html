@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaurav Coaching Institute — Computer Courses & NIOS Admission | Kanpur</title>
+<meta name="description" content="Gaurav Coaching Institute, Kanpur — Computer courses, NIOS/Open Board admission counselling aur Digital Marketing training.">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#2E1A47;
+    --gold:#E07A3F;
+    --cream:#FBF8F4;
+    --teal:#6B4E8A;
+    --ink:#1C1420;
+    --cream-soft:#EDE2F2;
+    --bs-font-sans-serif:'Inter',sans-serif;
+  }
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);}
+  h1,h2,h3,h4{font-family:'Poppins',sans-serif;color:var(--navy);}
+  .text-gold{color:var(--gold)!important;}
+  .bg-navy{background-color:var(--navy)!important;}
+  .bg-cream-soft{background-color:var(--cream-soft)!important;}
+  a{color:inherit;}
+  html{scroll-behavior:smooth;scroll-padding-top:76px;}
+
+  /* Navbar */
+  .navbar{background:var(--navy);padding:14px 0;}
+  .navbar-brand{font-family:'Poppins',sans-serif;font-weight:800;color:#fff!important;font-size:1.3rem;}
+  .navbar-brand span{color:var(--gold);}
+  .navbar-nav .nav-link{color:var(--cream-soft)!important;font-weight:500;margin-left:6px;}
+  .navbar-nav .nav-link:hover,.navbar-nav .nav-link.active{color:var(--gold)!important;}
+  .btn-gold{background:var(--gold);border-color:var(--gold);color:#fff;font-weight:600;}
+  .btn-gold:hover{background:#c8652f;border-color:#c8652f;color:#fff;}
+  .btn-outline-cream{border-color:rgba(255,255,255,.4);color:#fff;font-weight:600;}
+  .btn-outline-cream:hover{border-color:var(--gold);color:var(--gold);background:transparent;}
+
+  /* Hero */
+  .hero{background:var(--navy);color:var(--cream);padding:90px 0 70px;position:relative;overflow:hidden;}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border:1px solid rgba(224,122,63,.3);border-radius:50%;}
+  .badge-soft{background:rgba(224,122,63,.15);color:var(--gold);font-weight:600;font-size:.78rem;padding:8px 16px;border-radius:30px;letter-spacing:.03em;}
+
+  /* Marquee */
+  .marquee-wrap{background:var(--gold);overflow:hidden;padding:11px 0;}
+  .marquee-track{display:flex;gap:48px;white-space:nowrap;animation:scroll 20s linear infinite;font-weight:600;font-size:.85rem;color:#fff;}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* Section */
+  .section{padding:80px 0;}
+  .section-eyebrow{font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);}
+
+  /* Course cards */
+  .course-card{border:1px solid #E5D9EE;border-radius:12px;transition:transform .2s ease, box-shadow .2s ease;height:100%;}
+  .course-card:hover{transform:translateY(-6px);box-shadow:0 16px 32px rgba(0,0,0,.08);border-color:var(--gold);}
+  .course-card .num{font-weight:700;color:var(--gold);font-size:.85rem;}
+  .icon-circle{width:50px;height:50px;border-radius:50%;background:var(--cream-soft);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.3rem;}
+
+  /* Why us (dark) */
+  .why-section{background:var(--navy);color:var(--cream);}
+  .why-section h2,.why-section .section-eyebrow{color:var(--cream);}
+  .why-section .section-eyebrow{color:var(--gold);}
+  .why-icon{width:46px;height:46px;border-radius:50%;background:rgba(224,122,63,.2);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;}
+
+  /* Stats */
+  .stat-num{font-family:'Poppins',sans-serif;font-weight:800;font-size:2.2rem;color:var(--navy);}
+  .stat-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--teal);font-weight:600;}
+
+  /* Testimonials */
+  .carousel-card{background:#fff;border:1px solid #E5D9EE;border-radius:12px;padding:36px;max-width:640px;margin:0 auto;text-align:center;}
+  .carousel-card .stars{color:#F5A623;margin-bottom:12px;}
+  .avatar-circle{width:52px;height:52px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 10px;}
+
+  /* Accordion (FAQ) */
+  .accordion-button{font-weight:600;color:var(--navy);}
+  .accordion-button:not(.collapsed){background:var(--cream-soft);color:var(--navy);}
+  .accordion-button:focus{box-shadow:none;border-color:var(--gold);}
+
+  /* Contact form */
+  .contact-card{background:#fff;border:1px solid #E5D9EE;border-radius:12px;padding:32px;}
+  .form-control:focus,.form-select:focus{border-color:var(--teal);box-shadow:0 0 0 .2rem rgba(107,78,138,.15);}
+
+  /* CTA */
+  .cta-band{background:linear-gradient(120deg,var(--navy),#432a63);color:#fff;border-radius:16px;padding:56px 36px;}
+
+  footer{background:var(--ink);color:var(--cream-soft);}
+  footer a:hover{color:var(--gold)!important;}
+  footer h6{color:#fff;font-family:'Poppins',sans-serif;}
+
+  .back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--gold);color:#fff;display:none;align-items:center;justify-content:center;z-index:60;box-shadow:0 8px 20px rgba(0,0,0,.2);}
+
+  .fade-up{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+  .fade-up.is-visible{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){.fade-up{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Gaurav <span>Coaching</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" style="border-color:rgba(255,255,255,.3);">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-gold btn-sm px-3" href="#contact">Admission Enquiry</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <span class="badge-soft">KANPUR · COMPUTER + NIOS + DIGITAL MARKETING</span>
+        <h1 class="mt-3 fw-bold" style="font-size:clamp(2rem,4.5vw,3rem);color:#fff;">Seekhiye skills jo career banaye, guidance jo bharosa jagaye.</h1>
+        <p class="mt-3 mb-4" style="color:#D9CEE6;max-width:560px;">Computer courses, NIOS/open board admission counselling aur digital marketing training — sab ek hi jagah, practical aur beginner-friendly tareeke se.</p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="#contact" class="btn btn-gold btn-lg">Admission Enquiry</a>
+          <a href="#courses" class="btn btn-outline-cream btn-lg">Courses Dekhein</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>BATCH 01 — Mon/Wed/Fri — Morning</span>
+    <span>BATCH 02 — Tue/Thu/Sat — Evening</span>
+    <span>NIOS ADMISSION — Open Now</span>
+    <span>BATCH 01 — Mon/Wed/Fri — Morning</span>
+    <span>BATCH 02 — Tue/Thu/Sat — Evening</span>
+    <span>NIOS ADMISSION — Open Now</span>
+  </div>
+</div>
+
+<!-- About -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 fade-up">
+        <div class="ratio ratio-4x3 rounded-3" style="background:var(--cream-soft);display:flex;align-items:center;justify-content:center;color:var(--navy);font-weight:600;">
+          Institute Photo / Illustration
+        </div>
+      </div>
+      <div class="col-lg-6 fade-up">
+        <span class="section-eyebrow">Who We Are</span>
+        <h2 class="mt-2 mb-3">Kanpur ka bharosemand computer coaching institute</h2>
+        <p class="text-muted">Gaurav Coaching Institute pichle kai saalon se students ko computer skills, digital literacy aur NIOS admission process me guide kar raha hai — practical training aur one-on-one support ke saath.</p>
+        <ul class="list-unstyled mt-3">
+          <li class="mb-2"><i class="fa-solid fa-check text-gold me-2"></i>Experienced aur friendly trainers</li>
+          <li class="mb-2"><i class="fa-solid fa-check text-gold me-2"></i>Chhote batches, personal attention</li>
+          <li class="mb-2"><i class="fa-solid fa-check text-gold me-2"></i>NIOS admission documentation me full support</li>
+          <li class="mb-2"><i class="fa-solid fa-check text-gold me-2"></i>Affordable fees, flexible timing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Courses -->
+<section class="section bg-cream-soft" id="courses">
+  <div class="container">
+    <div class="text-center mx-auto mb-5 fade-up" style="max-width:560px;">
+      <span class="section-eyebrow">Courses</span>
+      <h2 class="mt-2">Jo sikhna hai, wahin se shuru karo</h2>
+      <p class="text-muted">Basic computer se leke digital marketing tak — har course hands-on practice ke saath.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 fade-up">
+        <div class="course-card p-4 bg-white">
+          <div class="icon-circle mb-3"><i class="fa-solid fa-desktop"></i></div>
+          <div class="num mb-1">COURSE 01</div>
+          <h3 class="h5">Computer Basics & Office</h3>
+          <p class="text-muted small mb-0">Typing, MS Office, internet aur digital literacy ki poori foundation.</p>
+        </div>
+      </div>
+      <div class="col-md-4 fade-up">
+        <div class="course-card p-4 bg-white">
+          <div class="icon-circle mb-3"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="num mb-1">COURSE 02</div>
+          <h3 class="h5">NIOS / Open Board Admission</h3>
+          <p class="text-muted small mb-0">10th/12th admission counselling, documentation aur form filling guidance.</p>
+        </div>
+      </div>
+      <div class="col-md-4 fade-up">
+        <div class="course-card p-4 bg-white">
+          <div class="icon-circle mb-3"><i class="fa-solid fa-bullhorn"></i></div>
+          <div class="num mb-1">COURSE 03</div>
+          <h3 class="h5">Digital Marketing</h3>
+          <p class="text-muted small mb-0">SEO, social media aur ads ka practical training real projects ke saath.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section class="section why-section">
+  <div class="container">
+    <div class="text-center mx-auto mb-5 fade-up" style="max-width:560px;">
+      <span class="section-eyebrow">Why Us</span>
+      <h2 class="mt-2">Hum different kyu hain</h2>
+      <p style="color:#D9CEE6;">Sirf classes nahi — poora guidance system jo tumhe result tak le jaata hai.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="why-icon mb-3">01</div>
+        <h3 class="h6" style="color:#fff;">Practical Learning</h3>
+        <p class="small" style="color:#D9CEE6;">Har topic hands-on exercises ke saath sikhaya jaata hai.</p>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="why-icon mb-3">02</div>
+        <h3 class="h6" style="color:#fff;">Small Batches</h3>
+        <p class="small" style="color:#D9CEE6;">Har student ko individual attention milta hai.</p>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="why-icon mb-3">03</div>
+        <h3 class="h6" style="color:#fff;">Admission Support</h3>
+        <p class="small" style="color:#D9CEE6;">NIOS admission ki poori process me end-to-end guidance.</p>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="why-icon mb-3">04</div>
+        <h3 class="h6" style="color:#fff;">Flexible Timing</h3>
+        <p class="small" style="color:#D9CEE6;">Morning aur evening dono batches available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="py-5 bg-white border-top border-bottom">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-4"><div class="stat-num" data-count="500">0</div><div class="stat-label">Students Guided</div></div>
+      <div class="col-4"><div class="stat-num" data-count="3">0</div><div class="stat-label">Core Courses</div></div>
+      <div class="col-4"><div class="stat-num" data-count="2">0</div><div class="stat-label">Daily Batches</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Carousel -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="text-center mx-auto mb-5 fade-up" style="max-width:560px;">
+      <span class="section-eyebrow">Testimonials</span>
+      <h2 class="mt-2">Students kya kehte hain</h2>
+    </div>
+    <div id="testiCarousel" class="carousel slide fade-up" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="carousel-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="fst-italic">"NIOS admission ka pura process itna asaan lagaa kyunki poori guidance yahin mil gayi."</p>
+            <div class="avatar-circle">RA</div>
+            <div class="fw-semibold">Riya Agarwal</div>
+            <div class="small text-muted">NIOS Student</div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="fst-italic">"Digital marketing course ke baad maine apna khud ka freelance kaam shuru kar diya."</p>
+            <div class="avatar-circle">AK</div>
+            <div class="fw-semibold">Amit Kumar</div>
+            <div class="small text-muted">Digital Marketing Batch</div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="fst-italic">"Trainers bahut patient hain, har doubt clear hone tak samjhate hain."</p>
+            <div class="avatar-circle">SP</div>
+            <div class="fw-semibold">Sneha Pandey</div>
+            <div class="small text-muted">Computer Basics Batch</div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testiCarousel" data-bs-slide="prev" style="width:5%;">
+        <span class="carousel-control-prev-icon" style="filter:invert(1) grayscale(100);"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testiCarousel" data-bs-slide="next" style="width:5%;">
+        <span class="carousel-control-next-icon" style="filter:invert(1) grayscale(100);"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Accordion -->
+<section class="section bg-cream-soft" id="faq">
+  <div class="container">
+    <div class="text-center mx-auto mb-5 fade-up" style="max-width:560px;">
+      <span class="section-eyebrow">FAQ</span>
+      <h2 class="mt-2">Aksar puche jaane wale sawal</h2>
+    </div>
+    <div class="accordion mx-auto fade-up" id="faqAccordion" style="max-width:720px;">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Admission ke liye kya documents chahiye?</button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">Aadhar card, pichli marksheet aur passport size photo — baaki documentation me hum guide karte hain.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Kya batch timing flexible hai?</button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">Haan, morning aur evening dono batches available hain — apni suvidha ke hisaab se choose kar sakte ho.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Fees kitni hai?</button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">Course ke hisaab se fees alag hai — exact details ke liye contact form fill karein ya call karein.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Kya certificate milta hai course complete karne par?</button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">Haan, har course completion par institute ka certificate diya jaata hai.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-5 fade-up">
+        <span class="section-eyebrow">Get In Touch</span>
+        <h2 class="mt-2 mb-3">Hume Contact Karein</h2>
+        <p class="text-muted mb-4">Admission, courses ya kisi bhi query ke liye form bharein ya seedhe call karein.</p>
+        <div class="d-flex align-items-center mb-3">
+          <div class="icon-circle me-3"><i class="fa-solid fa-phone"></i></div>
+          <div><div class="fw-semibold">Call Us</div><a href="tel:+910000000000" class="text-muted">+91 00000 00000</a></div>
+        </div>
+        <div class="d-flex align-items-center mb-3">
+          <div class="icon-circle me-3"><i class="fa-solid fa-envelope"></i></div>
+          <div><div class="fw-semibold">Email Us</div><a href="mailto:info@gauravcoaching.in" class="text-muted">info@gauravcoaching.in</a></div>
+        </div>
+        <div class="d-flex align-items-center">
+          <div class="icon-circle me-3"><i class="fa-solid fa-location-dot"></i></div>
+          <div><div class="fw-semibold">Visit Us</div><span class="text-muted">Kanpur, Uttar Pradesh</span></div>
+        </div>
+      </div>
+      <div class="col-lg-7 fade-up">
+        <div class="contact-card">
+          <form id="contactForm" class="row g-3" novalidate>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold small" for="cName">Full Name</label>
+              <input type="text" class="form-control" id="cName" required>
+              <div class="invalid-feedback">Naam zaroori hai.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold small" for="cPhone">Phone Number</label>
+              <input type="tel" class="form-control" id="cPhone" required pattern="^[0-9+\\s-]{10,}$">
+              <div class="invalid-feedback">Sahi phone number likhein.</div>
+            </div>
+            <div class="col-12">
+              <label class="form-label fw-semibold small" for="cEmail">Email</label>
+              <input type="email" class="form-control" id="cEmail" required>
+              <div class="invalid-feedback">Sahi email likhein.</div>
+            </div>
+            <div class="col-12">
+              <label class="form-label fw-semibold small" for="cCourse">Interested Course</label>
+              <select class="form-select" id="cCourse" required>
+                <option value="" selected disabled>-- Choose a course --</option>
+                <option>Computer Basics & Office</option>
+                <option>NIOS / Open Board Admission</option>
+                <option>Digital Marketing</option>
+              </select>
+              <div class="invalid-feedback">Course select karein.</div>
+            </div>
+            <div class="col-12">
+              <label class="form-label fw-semibold small" for="cMsg">Message (optional)</label>
+              <textarea class="form-control" id="cMsg" rows="3"></textarea>
+            </div>
+            <div class="col-12" id="formSuccess" style="display:none;">
+              <div class="alert alert-success mb-0">Message bhej diya gaya! Hum jald hi reply karenge.</div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-gold w-100 py-2">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="cta-band text-center fade-up">
+      <h2 style="color:#fff;">Admission ke liye ready ho?</h2>
+      <p style="color:#D9CEE6;" class="mb-4">Ek call kariye, seat confirm kariye — process bilkul simple hai.</p>
+      <a href="#contact" class="btn btn-gold btn-lg">Contact Karein</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="pt-5 pb-4">
+  <div class="container">
+    <div class="row g-4 mb-4">
+      <div class="col-lg-5">
+        <h6>Gaurav Coaching Institute</h6>
+        <p class="small">Computer courses, NIOS admission counselling aur digital marketing training — Kanpur, Uttar Pradesh.</p>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h6>Quick Links</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="#about">About</a></li>
+          <li class="mb-2"><a href="#courses">Courses</a></li>
+          <li class="mb-2"><a href="#faq">FAQ</a></li>
+          <li class="mb-2"><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-4">
+        <h6>Contact</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="tel:+910000000000"><i class="fa-solid fa-phone me-2"></i>+91 00000 00000</a></li>
+          <li class="mb-2"><a href="mailto:info@gauravcoaching.in"><i class="fa-solid fa-envelope me-2"></i>info@gauravcoaching.in</a></li>
+          <li class="mb-2"><i class="fa-solid fa-location-dot me-2"></i>Kanpur, Uttar Pradesh</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-top pt-3 text-center small" style="border-color:#2A2235!important;">
+      © 2026 Gaurav Coaching Institute. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<a href="#home" class="back-to-top" id="backToTop"><i class="fa-solid fa-arrow-up"></i></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Close mobile navbar on link click
+  var navCollapse = document.getElementById('mainNav');
+  document.querySelectorAll('#mainNav .nav-link, #mainNav .btn').forEach(function (l) {
+    l.addEventListener('click', function () {
+      var bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+      if (bsCollapse && navCollapse.classList.contains('show')) bsCollapse.hide();
+    });
+  });
+
+  // Active link highlighting via scrollspy-ish simple approach
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('#mainNav .nav-link');
+  window.addEventListener('scroll', function () {
+    var scrollPos = window.scrollY + 90;
+    sections.forEach(function (sec) {
+      if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
+        navLinks.forEach(function (l) { l.classList.remove('active'); });
+        var match = document.querySelector('#mainNav .nav-link[href="#' + sec.id + '"]');
+        if (match) match.classList.add('active');
+      }
+    });
+  });
+
+  // Fade-up scroll reveal
+  var revealEls = document.querySelectorAll('.fade-up');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  // Animated counters
+  var counters = document.querySelectorAll('.stat-num');
+  var counted = false;
+  function animateCounters() {
+    if (counted) return;
+    var statsSection = document.querySelector('.stat-num').closest('section');
+    var rect = statsSection.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 60) {
+      counted = true;
+      counters.forEach(function (el) {
+        var target = parseInt(el.dataset.count, 10);
+        var count = 0;
+        var step = Math.max(1, Math.ceil(target / 40));
+        var timer = setInterval(function () {
+          count += step;
+          if (count >= target) { count = target; clearInterval(timer); }
+          el.textContent = count + (target >= 100 ? '+' : '');
+        }, 30);
+      });
+    }
+  }
+  window.addEventListener('scroll', animateCounters);
+  animateCounters();
+
+  // Bootstrap form validation + fake success
+  var form = document.getElementById('contactForm');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!form.checkValidity()) {
+      form.classList.add('was-validated');
+      return;
+    }
+    document.getElementById('formSuccess').style.display = 'block';
+    form.reset();
+    form.classList.remove('was-validated');
+  });
+
+  // Back to top button
+  var backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', function () {
+    backToTop.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  });
+
+});
+</script>
+</body>
+</html>
